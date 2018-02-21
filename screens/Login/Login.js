@@ -2,22 +2,15 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    StyleSheet,
+    StyleSheet
 } from 'react-native';
 
 import SvgUri from 'react-native-svg-uri';
-import PrimaryFlatButton from './../../components/Button/PrimaryFlatButton';
+import { FacebookLoginButton, GoogleLoginButton, EmailLoginButton } from './../../components/Button/LoginButton';
 
-import { NavigationActions } from 'react-navigation';
-
-export default class GetStarted extends Component {
-
+export default class Login extends Component {
     static navigationOptions = {
         header: null
-    }
-
-    _startIntro() {
-        this.props.navigation.navigate('intro');
     }
 
     render() {
@@ -29,12 +22,16 @@ export default class GetStarted extends Component {
                         height="150"
                         width="150"
                     />
-                    <Text style={styles.heading}>Motion</Text>
-                    <Text style={styles.subHeading}>"create change"</Text>
+                    <Text style={styles.subHeadingPrimary}>Login With:</Text>
                 </View>
-                <PrimaryFlatButton text="Get Started" onPress={() => this._startIntro()} />
+
+                <View style={styles.buttons}>
+                    <FacebookLoginButton style={styles.mainButton} />
+                    <GoogleLoginButton style={styles.mainButton} />
+                    <EmailLoginButton style={styles.mainButton} />
+                </View>
             </View>
-        );
+        )
     }
 }
 
@@ -44,18 +41,18 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         flex: 1
     },
-    heading: {
-        fontSize: 35,
-        color: "#000",
-        fontFamily: "SourceSansPro_Bold"
-    },
-    subHeading: {
+    subHeadingPrimary: {
         fontSize: 20,
-        color: "#444",
-        fontFamily: "SourceSansPro_Italic"
+        color: "#222",
+        fontFamily: "SourceSansPro_Light",
+        textAlign: "center",
+        marginLeft: 15,
+        marginRight: 15,
+        marginTop: 15
     },
-    mainButton: {
-        height: 50
+    buttons: {
+        alignSelf: "stretch",
+        marginBottom: 45
     },
     center: {
         marginTop: 150,

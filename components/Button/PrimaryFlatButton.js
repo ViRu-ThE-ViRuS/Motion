@@ -6,10 +6,10 @@ import {
     StyleSheet
 } from "react-native";
 
-export default class GetStartedButton extends Component {
+export default class PrimaryFlatButton extends Component {
     render() {
         return (
-            <TouchableOpacity style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
                 <View>
                     <Text style={styles.text}>{this.props.text}</Text>
                 </View>
