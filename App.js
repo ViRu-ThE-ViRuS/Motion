@@ -4,19 +4,9 @@ import {
   Text,
   View
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import GetStarted from './screens/GetStarted/GetStarted';
 
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text> Hello World </Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-
-  }
+export default StackNavigator({
+  getStarted: GetStarted
 });
