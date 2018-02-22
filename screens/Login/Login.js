@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
 } from 'react-native';
 
 import SvgUri from 'react-native-svg-uri';
@@ -10,53 +10,53 @@ import { FacebookLoginButton, GoogleLoginButton, EmailLoginButton } from './../.
 
 export default class Login extends Component {
     static navigationOptions = {
-        header: null
+        header: null,
     }
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.center}>
-                    <SvgUri
+          <View style={styles.container}>
+            <View style={styles.center}>
+              <SvgUri
                         source={require('./../res/motion_logo.svg')}
                         height="150"
                         width="150"
                     />
-                    <Text style={styles.subHeadingPrimary}>Login With:</Text>
-                </View>
-
-                <View style={styles.buttons}>
-                    <FacebookLoginButton style={styles.mainButton} />
-                    <GoogleLoginButton style={styles.mainButton} />
-                    <EmailLoginButton style={styles.mainButton} />
-                </View>
+              <Text style={styles.subHeadingPrimary}>Login With:</Text>
             </View>
-        )
+
+            <View style={styles.buttons}>
+              <FacebookLoginButton style={styles.mainButton} />
+              <GoogleLoginButton style={styles.mainButton} />
+              <EmailLoginButton style={styles.mainButton} />
+            </View>
+          </View>
+        );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center",
-        justifyContent: "space-between",
-        flex: 1
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flex: 1,
     },
     subHeadingPrimary: {
         fontSize: 20,
-        color: "#222",
-        fontFamily: "SourceSansPro_Light",
-        textAlign: "center",
+        color: '#222',
+        fontFamily: 'SourceSansPro_Light',
+        textAlign: 'center',
         marginLeft: 15,
         marginRight: 15,
-        marginTop: 15
+        marginTop: 15,
     },
     buttons: {
-        alignSelf: "stretch",
-        marginBottom: 45
+        alignSelf: 'stretch',
+        marginBottom: 45,
     },
     center: {
         marginTop: 150,
-        justifyContent: "center",
-        alignItems: "center"
-    }
-})
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+});
