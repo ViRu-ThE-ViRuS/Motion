@@ -13,6 +13,19 @@ export default class Login extends Component {
         header: null,
     }
 
+<<<<<<< HEAD
+=======
+    navigateToMain() {
+        // this.props.navigation.dispatch(NavigationActions.reset({
+        //     index: 0,
+        //     actions: [
+        //         NavigationActions.navigate({ routeName: 'main' }),
+        //     ],
+        // }));
+        this.props.navigation.navigate('main');
+    }
+
+>>>>>>> 3d345e2... Add basic template for Main screen.
     render() {
         return (
           <View style={styles.container}>

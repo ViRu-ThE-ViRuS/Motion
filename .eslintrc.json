@@ -91,7 +91,8 @@
             2,
             {
                 "devDependencies": [
-                    "**/__tests__/*.js"
+                    "**/__tests__/*.js",
+                    "**/setupTests.js"
                 ]
             }
         ],

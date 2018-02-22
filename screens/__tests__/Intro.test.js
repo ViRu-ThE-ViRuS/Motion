@@ -1,24 +1,37 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import Intro from './../Intro/Intro';
 
-beforeEach(() => {
-    global.fetch = jest.fn((props) => ({
-        text: jest.fn(),
-    }));
-});
+describe('Intro screen tests', () => {
+    let tree;
+    let mockNavigation;
+    let wrapper;
 
-it('Intro screen renders correctly', () => {
-    const mockNavigation = {
-        navigate: jest.fn((route) => true),
-    };
+    beforeEach(() => {
+        global.fetch = jest.fn((props) => ({
+            text: jest.fn(),
+        }));
 
-    const tree = renderer.create(
-      <Intro navigation={mockNavigation} />
-    );
+        mockNavigation = {
+            navigate: jest.fn((route) => true),
+        };
 
-    expect(tree).toMatchSnapshot();
-    expect(tree.getInstance().startLogin()).toBe(undefined);
+        wrapper = shallow(<Intro navigation={mockNavigation} />);
+
+        tree = renderer.create(
+          <Intro navigation={mockNavigation} />
+        );
+    });
+
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('navigates correctly', () => {
+        expect(tree.getInstance().startLogin()).toBe(undefined);
+        expect(wrapper.find('PrimaryFlatButton').prop('onPress')()).toBe(undefined);
+    });
 });

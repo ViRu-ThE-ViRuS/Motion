@@ -1,23 +1,38 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import Login from './../Login/Login';
 
-beforeEach(() => {
-    global.fetch = jest.fn((props) => ({
-        text: jest.fn(),
-    }));
-});
+describe('Login screen tests', () => {
+    let tree;
+    let mockNavigation;
+    let wrapper;
 
-it('Login screen renders correctly', () => {
-    const mockNavigation = {
-        navigate: jest.fn((route) => { console.log(route); }),
-    };
+    beforeEach(() => {
+        global.fetch = jest.fn((props) => ({
+            text: jest.fn(),
+        }));
 
-    const tree = renderer.create(
-      <Login navigation={mockNavigation} />
-    );
+        mockNavigation = {
+            navigate: jest.fn((props) => { console.log(props); }),
+        };
 
-    expect(tree).toMatchSnapshot();
+        wrapper = shallow(<Login navigation={mockNavigation} />);
+
+        tree = renderer.create(
+          <Login navigation={mockNavigation} />
+          );
+    });
+
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('navigates correctly', () => {
+        expect(wrapper.find('FacebookLoginButton').prop('onPress')()).toBe(undefined);
+        expect(wrapper.find('GoogleLoginButton').prop('onPress')()).toBe(undefined);
+        expect(wrapper.find('EmailLoginButton').prop('onPress')()).toBe(undefined);
+    });
 });
