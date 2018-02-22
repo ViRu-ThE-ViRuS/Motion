@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ViRu-ThE-ViRuS/Motion.svg?branch=master)](https://travis-ci.org/ViRu-ThE-ViRuS/Motion)
+
 # Project Title
 
 Visit the [Official Website](https://www.motionapp.info).
