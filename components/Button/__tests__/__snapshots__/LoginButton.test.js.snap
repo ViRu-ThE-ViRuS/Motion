@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Email login button renders correctly 1`] = `
+exports[`LoginButton tests EmailLoginButton renders correctly 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -53,7 +53,7 @@ exports[`Email login button renders correctly 1`] = `
 </View>
 `;
 
-exports[`Facebook login button renders correctly 1`] = `
+exports[`LoginButton tests FacebookLoginButton renders correctly 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -106,7 +106,7 @@ exports[`Facebook login button renders correctly 1`] = `
 </View>
 `;
 
-exports[`Google login button renders correctly 1`] = `
+exports[`LoginButton tests GoogleLoginButton renders correctly 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}

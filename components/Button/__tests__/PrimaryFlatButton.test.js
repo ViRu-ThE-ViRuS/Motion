@@ -4,10 +4,12 @@ import renderer from 'react-test-renderer';
 
 import PrimaryFlatButton from './../PrimaryFlatButton';
 
-it('Primary flat button renders correctly', () => {
-  const tree = renderer.create(
-    <PrimaryFlatButton text="Get Started" />
-  );
+describe('PrimaryFlatButton tests', () => {
+  it('renders correctly', () => {
+    const tree = renderer.create(
+      <PrimaryFlatButton text="Get Started" />
+    );
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
 });
