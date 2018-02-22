@@ -13,3 +13,6 @@ Be local or push for global agenda. Make yourself heard. Get the power to become
 ## Authors
 
 * **Viraat Chandra** - [ViRu-ThE-ViRuS](https://github.com/ViRu-ThE-ViRuS/)
+
+### Notice
+* Refer to the CODE_OF_CONDUCT before interacting with this repo.
