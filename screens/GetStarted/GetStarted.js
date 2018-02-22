@@ -5,8 +5,6 @@ import {
     StyleSheet,
 } from 'react-native';
 
-import { NavigationActions } from 'react-navigation';
-
 import SvgUri from 'react-native-svg-uri';
 import PrimaryFlatButton from './../../components/Button/PrimaryFlatButton';
 
