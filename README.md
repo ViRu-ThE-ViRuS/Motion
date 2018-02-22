@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/ViRu-ThE-ViRuS/Motion.svg?branch=master)](https://travis-ci.org/ViRu-ThE-ViRuS/Motion)
 [![codecov](https://codecov.io/gh/ViRu-ThE-ViRuS/Motion/branch/master/graph/badge.svg)](https://codecov.io/gh/ViRu-ThE-ViRuS/Motion)
 
-# Project Title
+# Motion
 
 Visit the [Official Website](https://www.motionapp.info).
 
