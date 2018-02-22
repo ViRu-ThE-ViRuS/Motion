@@ -15,7 +15,7 @@ install:
   - yarn
   
 script:
-  - npm test
+  - npm test -- -u
   - npm run lint
   - codecov
 
