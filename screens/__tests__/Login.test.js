@@ -16,7 +16,7 @@ describe('Login screen tests', () => {
         }));
 
         mockNavigation = {
-            navigate: jest.fn((route) => { console.log(route); }),
+            navigate: jest.fn((props) => { console.log(props); }),
         };
 
         wrapper = shallow(<Login navigation={mockNavigation} />);
@@ -28,5 +28,11 @@ describe('Login screen tests', () => {
 
     it('renders correctly', () => {
         expect(tree).toMatchSnapshot();
+    });
+
+    it('navigates correctly', () => {
+        expect(wrapper.find('FacebookLoginButton').prop('onPress')()).toBe(undefined);
+        expect(wrapper.find('GoogleLoginButton').prop('onPress')()).toBe(undefined);
+        expect(wrapper.find('EmailLoginButton').prop('onPress')()).toBe(undefined);
     });
 });
