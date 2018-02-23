@@ -13,6 +13,10 @@ export default class Login extends Component {
         header: null,
     }
 
+    navigateToMain() {
+        this.props.navigation.navigate('main');
+    }
+
     render() {
         return (
           <View style={styles.container}>
@@ -26,9 +30,9 @@ export default class Login extends Component {
             </View>
 
             <View style={styles.buttons}>
-              <FacebookLoginButton style={styles.mainButton} />
-              <GoogleLoginButton style={styles.mainButton} />
-              <EmailLoginButton style={styles.mainButton} />
+              <FacebookLoginButton style={styles.mainButton} onPress={() => this.navigateToMain()} />
+              <GoogleLoginButton style={styles.mainButton} onPress={() => this.navigateToMain()} />
+              <EmailLoginButton style={styles.mainButton} onPress={() => this.navigateToMain()} />
             </View>
           </View>
         );
