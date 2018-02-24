@@ -1,23 +1,80 @@
 language: node_js
-
 node_js:
-  - "stable"
-
+- '7.1'
+- stable
+sudo: false
 cache:
   yarn: true
   directories:
-    - node_modules
-
+  - "$HOME/.yarn-cache"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - node_modules
+env:
+- NODE_ENV='test'
 install:
-  - npm install -g codecov
-  - npm install
-  - npm install yarn -g
-  - yarn
-  
+- npm install -g codecov
+- npm install
+- npm install yarn -g
+- yarn
 script:
-  - npm test -- -u
-  - npm run lint
-  - codecov
-
-notifications:
-  email: false
+- npm run lint
+- npm test
+- codecov
+matrix:
+  include:
+  - language: android
+    os: linux
+    jdk: oraclejdk8
+    before_cache:
+    - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+    - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+    sudo: required
+    node_js: false
+    before_install:
+    - nvm install stable
+    - node --version
+    - travis_retry curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key
+      add -
+    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    - travis_retry sudo apt-get update -qq
+    - travis_retry sudo apt-get install -y -qq yarn
+    - cd android/app && openssl aes-256-cbc -K $encrypted_ff4a4f68ac9c_key -iv $encrypted_ff4a4f68ac9c_iv
+      -in motion_release_key.keystore.enc -out motion_release_key.keystore -d && cd ../..
+    install:
+    - npm install -g codecov
+    - npm install
+    - npm install yarn -g
+    - yarn
+    android:
+      components:
+      - tools
+      - platform-tools
+      - build-tools-23.0.1
+      - android-23
+      - build-tools-26.0.1
+      - android-26
+      - extra-android-m2repository
+      - extra-google-google_play_services
+      - extra-google-m2repository
+      - addon-google_apis-google-16
+    script:
+    - cd android
+    - ./gradlew clean
+    - ./gradlew assembleRelease
+    - cd ..
+    before_deploy:
+    - cd android/app/build/outputs/apk/
+    - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $HOME/keystore.jks -storepass $Motion_RELEASE_STORE_PASSWORD -keypass $Motion_RELEASE_KEY_PASSWORD app-release-unsigned.apk $Motion_RELEASE_KEY_ALIAS
+    - jarsigner -verify app-release-unsigned.apk
+    - "${ANDROID_HOME}/build-tools/24.0.2/zipalign -v 4 app-release-unsigned.apk motion.apk"
+    deploy:
+      provider: releases
+      file: motion.apk
+      skip_cleanup: true
+      on:
+        repo: ViRu-ThE-ViRuS/Motion
+        tags: true
+        jdk: oraclejdk8
+      api_key:
+        secure: $github_token
