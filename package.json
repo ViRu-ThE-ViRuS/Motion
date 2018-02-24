@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "./node_modules/.bin/eslint **/*.js --fix --quiet",
+    "lint": "./node_modules/.bin/eslint **/*.js --quiet",
     "build": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
