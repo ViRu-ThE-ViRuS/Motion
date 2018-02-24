@@ -19,6 +19,20 @@ exports[`GetStarted screen tests renders correctly 1`] = `
       }
     }
   >
+    <Image
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../screens/res/mlogo.png",
+        }
+      }
+      style={
+        Object {
+          "height": 150,
+          "width": 150,
+        }
+      }
+    />
     <Text
       accessible={true}
       allowFontScaling={true}

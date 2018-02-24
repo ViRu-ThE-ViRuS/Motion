@@ -3,9 +3,8 @@ import {
     View,
     Text,
     StyleSheet,
+    Image,
 } from 'react-native';
-
-import SvgUri from 'react-native-svg-uri';
 
 import PrimaryFlatButton from './../../components/Button/PrimaryFlatButton';
 
@@ -30,10 +29,10 @@ export default class Intro extends Component {
         return (
           <View style={styles.container}>
             <View style={styles.center}>
-              <SvgUri
-                        source={require('./../res/motion_logo.svg')}
-                        height="150"
-                        width="150"
+              <Image
+                        source={require('./../res/mlogo.png')}
+                        style={styles.image}
+                        resizeMode="contain"
                     />
               <Text style={styles.heading}>Motion</Text>
               <Text style={styles.subHeadingPrimary}>is a mobile platform that lets you create change in the world.</Text>
@@ -78,5 +77,9 @@ const styles = StyleSheet.create({
         marginTop: 150,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    image: {
+        height: 150,
+        width: 150,
     },
 });

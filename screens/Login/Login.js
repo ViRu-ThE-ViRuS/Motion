@@ -3,9 +3,9 @@ import {
     View,
     Text,
     StyleSheet,
+    Image,
 } from 'react-native';
 
-import SvgUri from 'react-native-svg-uri';
 import { FacebookLoginButton, GoogleLoginButton, EmailLoginButton } from './../../components/Button/LoginButton';
 
 export default class Login extends Component {
@@ -21,10 +21,10 @@ export default class Login extends Component {
         return (
           <View style={styles.container}>
             <View style={styles.center}>
-              <SvgUri
-                        source={require('./../res/motion_logo.svg')}
-                        height="150"
-                        width="150"
+              <Image
+                        source={require('./../res/mlogo.png')}
+                        style={styles.image}
+                        resizeMode="contain"
                     />
               <Text style={styles.subHeadingPrimary}>Login With:</Text>
             </View>
@@ -62,5 +62,9 @@ const styles = StyleSheet.create({
         marginTop: 150,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    image: {
+        height: 150,
+        width: 150,
     },
 });
