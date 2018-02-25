@@ -16,7 +16,7 @@ describe('Login screen tests', () => {
         }));
 
         mockNavigation = {
-            navigate: jest.fn((route) => { console.log(route); }),
+            navigate: jest.fn((route) => { }),
         };
 
         wrapper = shallow(<Login navigation={mockNavigation} />);
