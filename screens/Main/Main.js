@@ -3,24 +3,23 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 import { Icon } from 'react-native-elements';
 
-import LocalFeed from './Tabs/LocalFeed';
-import GlobalFeed from './Tabs/GlobalFeed';
-import BookmarksFeed from './Tabs/BookmarksFeed';
+import { LocalFeedStack, GlobalFeedStack, BookmarksFeedStack } from './Tabs/TabStackNavigators';
 
 export default TabNavigator({
     local: {
-        screen: LocalFeed,
+        screen: LocalFeedStack,
     },
     global: {
-        screen: GlobalFeed,
+        screen: GlobalFeedStack,
     },
     bookmarks: {
-        screen: BookmarksFeed,
+        screen: BookmarksFeedStack,
     },
 }, {
         tabBarOptions: {
             activeTintColor: '#5C7D87',
             inactiveTintColor: 'gray',
+            showLabel: false,
         },
         tabBarComponent: TabBarBottom,
         tabBarPosition: 'bottom',

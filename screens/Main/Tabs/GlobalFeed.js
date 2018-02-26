@@ -7,9 +7,12 @@ import {
     BackHandler,
 } from 'react-native';
 
+import NavBarComponent from './../../../components/NavBarComponent/NavBarComponent';
+
 export default class GlobalFeed extends Component {
     static navigationOptions = {
-        header: null,
+        title: 'Global Feed',
+        headerRight: (<NavBarComponent />),
     }
 
     componentWillMount() {

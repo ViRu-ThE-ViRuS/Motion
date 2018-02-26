@@ -11,5 +11,5 @@ export default StackNavigator({
     login: Login,
     main: Main,
 }, {
-    initialRouteName: 'getStarted',
+    initialRouteName: 'main',
 });
