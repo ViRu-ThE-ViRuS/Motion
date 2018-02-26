@@ -34,8 +34,8 @@ export default TabNavigator({
                 let iconType;
 
                 if (routeName === 'local') {
-                    iconName = 'location';
-                    iconType = 'octicon';
+                    iconName = 'location-on';
+                    iconType = 'materialicons';
                 } else if (routeName === 'global') {
                     iconType = 'material-community';
                     if (focused) {
