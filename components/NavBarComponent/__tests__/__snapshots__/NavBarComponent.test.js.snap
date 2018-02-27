@@ -2,80 +2,137 @@
 
 exports[`LoginButton tests FacebookLoginButton renders correctly 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
-  isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "opacity": 1,
+      "flexDirection": "row",
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "marginRight": 15,
+        "opacity": 1,
       }
     }
+    testID={undefined}
+    tvParallaxProperties={undefined}
   >
     <View
-      onPress={undefined}
       style={
-        Array [
-          false,
-          false,
-          false,
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "justifyContent": "center",
-          },
-          undefined,
-        ]
+        Object {
+          "marginRight": 10,
+        }
       }
-      underlayColor="white"
     >
-      <Text
-        accessible={true}
-        allowFontScaling={false}
-        ellipsizeMode="tail"
+      <View
+        onPress={undefined}
         style={
           Array [
+            false,
+            false,
+            false,
             Object {
-              "color": "black",
-              "fontSize": 25,
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "justifyContent": "center",
             },
-            Array [
-              Object {
-                "backgroundColor": "transparent",
-              },
-              undefined,
-            ],
-            Object {
-              "fontFamily": "Material Icons",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
+            undefined,
           ]
         }
+        underlayColor="white"
       >
-        
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 25,
+              },
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+              ],
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "marginRight": 10,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../screens/res/mlogo.png",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 50,
+            "height": 25,
+            "resizeMode": "contain",
+            "width": 25,
+          }
+        }
+      />
     </View>
   </View>
 </View>
