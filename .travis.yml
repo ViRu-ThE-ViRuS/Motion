@@ -17,6 +17,7 @@ install:
 - npm install
 - npm install yarn -g
 - yarn
+- npm run postInstall
 script:
 - npm run lint
 - npm test
@@ -46,7 +47,7 @@ matrix:
     - npm install
     - npm install yarn -g
     - yarn
-    - rm ./node_modules/react-native/local-cli/core/__fixtures__/files/package.json
+    - npm run postInstall
     android:
       components:
       - tools
