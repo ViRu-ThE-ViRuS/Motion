@@ -3,6 +3,8 @@ node_js:
 - '7.1'
 - stable
 sudo: false
+notifications:
+  email: false
 cache:
   yarn: true
   directories:
@@ -17,6 +19,7 @@ install:
 - npm install
 - npm install yarn -g
 - yarn
+- npm run postInstall
 script:
 - npm run lint
 - npm test
@@ -46,6 +49,7 @@ matrix:
     - npm install
     - npm install yarn -g
     - yarn
+    - npm run postInstall
     android:
       components:
       - tools

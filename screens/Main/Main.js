@@ -25,6 +25,7 @@ export default TabNavigator({
         tabBarPosition: 'bottom',
         animationEnabled: true,
         swipeEnabled: true,
+        lazy: false,
         navigationOptions: ({ navigation }) => ({
             header: null,
             headerLeft: null,
