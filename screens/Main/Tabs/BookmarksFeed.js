@@ -27,6 +27,10 @@ export default class BookmarksFeed extends Component {
         BackHandler.removeEventListener('hardwareBackPress', BackHandler.exitApp);
     }
 
+    createMotionScreen() {
+        this.props.navigation.navigate('createMotion');
+    }
+
     render() {
         return (
           <View style={styles.container}>
@@ -41,7 +45,7 @@ export default class BookmarksFeed extends Component {
               <ActionButton.Item buttonColor="#1abc9c" title="Filter">
                 <ICON name="filter" style={styles.actionButtonIcon} />
               </ActionButton.Item>
-              <ActionButton.Item buttonColor="#1b998b" title="Create Motion">
+              <ActionButton.Item buttonColor="#1b998b" title="Create Motion" onPress={() => this.createMotionScreen()}>
                 <Icon name="add" style={styles.actionButtonIcon} />
               </ActionButton.Item>
             </ActionButton>
